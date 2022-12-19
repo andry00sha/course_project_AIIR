@@ -1,6 +1,6 @@
-from django.urls import  path
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('<int:size>/<matrix>/<int:step>', views.degree)
+    path('<str:matrix>/<int:step>', views.index)
 ]

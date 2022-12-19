@@ -1,9 +1,13 @@
 from django.http import HttpResponse
-import func_app
+
+from func_app.func import degree
+
 
 # Create your views here.
 
 
-def degree(request, size, matrix, step):
-    return HttpResponse(f"Возведение матрицы {matrix} в степень {step} дает следующий результат: {func_app.degree(request, size, matrix, step)}")
+def index(request, matrix, step):
+    a = str(degree(matrix, step))
+    return HttpResponse(f"Возведение матрицы {matrix} в степень {step} дает следующий результат: {a}")
+
 
